@@ -8,11 +8,11 @@ app = Flask(__name__)
 def get_animal():
     return random.choice(['cow', 'horse', 'pig'])
 
-@app.route('/get_noise', method=['POST'])
-def get_noise(animal):
+@app.route('/get_noise', methods=['POST'])
+def get_noise():
     noises = {
-        'cow' : 'moo'
-        'horse' : 'neigh'
+        'cow' : 'moo',
+        'horse' : 'neigh',
         'pig' : 'oink'
     }
     return noises[request.data.decode('utf-8')]
