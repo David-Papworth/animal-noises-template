@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import requests
-api = 'http://animal_noises_api:5000'
 
 app = Flask(__name__)
 
