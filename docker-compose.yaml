@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  server:
+    container_name: animal_noises_server
+    image: davidpapworth2/animal_noises_server
+    build: ./server
+    ports: 
+    - published: 5000
+      target: 5000
+  animal_api:
+    container_name: animal_noises_api
+    image: davidpapworth2/animal_noises_api
+    build: ./animal_api
