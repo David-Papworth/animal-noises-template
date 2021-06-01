@@ -4,8 +4,6 @@ services:
     container_name: animal_noises_server
     image: davidpapworth2/animal_noises_server
     build: ./server
-    deploy:
-      replicas: 5
     ports: 
     - published: 5000
       target: 5000
@@ -15,5 +13,4 @@ services:
     container_name: animal_noises_api
     image: davidpapworth2/animal_noises_api
     build: ./animal_api
-    deploy:
-      replicas: 5
+  

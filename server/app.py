@@ -19,7 +19,8 @@ class Animals(db.Model):
 def home():
     animal = requests.get('http://animal_noises_api:5000/get_animal')
     noise = requests.post('http://animal_noises_api:5000/get_noise', data=animal.text)
-    last_five_animals = Animals.query.order_by(desc(Animals.id)).limit(5).all()
+    last_five_animals = Animals.query.order_by(desc("id")).limit(5).all()
+    #last_five_animals = Animals.query.all()
     db.session.add(
         Animals(
             type = animal.text,
